@@ -2,7 +2,7 @@
   "name": "angular-shopping-cart",
   "version": "1.0.0",
   "description": "An Angular app to add products to a shopping cart",
-  "main": "main.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Erikang20/angular-shopping-cart#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "ejs": "^2.5.1",
     "express": "^4.14.0",
     "knex": "^0.11.9",
     "method-override": "^2.3.6",

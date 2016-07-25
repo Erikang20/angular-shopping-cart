@@ -5,12 +5,13 @@ var methodOverride = require( 'method-override' );
 var bodyParser = require( 'body-parser' );
 
 
+
 router.get( '/', function ( req, res, next ) {
     knex( 'shopping' ).select().then( function ( result, err ) {
-        res.render( 'index' )
-        console.log( "index" );
-    } )
+        res.render( 'index' );
+    } );
 } );
+
 
 
 module.exports = router;
