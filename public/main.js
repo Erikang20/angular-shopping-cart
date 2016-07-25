@@ -10,6 +10,7 @@ var app = angular.module( "myApp", [ 'ngRoute' ] );
 
 app.controller( "headerController", function ( $scope, $http ) {
     $scope.view = {};
+    $scope.searchProduct = '';
     $scope.view.products = [
         {
             "_id": "55c8ee82152165d244b98300",

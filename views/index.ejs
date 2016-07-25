@@ -47,14 +47,19 @@
             </div>
           </nav>
         </header>
+<%#==================================%>
+<%# search%>
+<%#==================================%>
 
     <div class="container search-form">
-        <form name="productsForm">
+        <form name="productsForm" role="search">
           <label for="category">Search by Category: </label>
-          <div class="btn-group">
+            <div class="btn-group">
+
             <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Categories <span class="caret"></span>
             </button>
+
             <ul class="dropdown-menu">
               <li><a href="#">First Category</a></li>
               <li><a href="#">Second Category</a></li>
@@ -64,7 +69,7 @@
 
 
           <label for="name">Search by Name: </label>
-          <input type="text">
+          <input type="text" ng-model="searchProduct">
 
           <button type="button" class="btn btn-danger pull-right">Checkout | Bag: </button>
         </form>
@@ -92,12 +97,12 @@
 <%# display products on table%>
 <%# ============================================%>
 
-              <tbody ng-repeat="product in view.products">
+              <tbody ng-repeat="product in view.products | filter:searchProduct">
                 <tr>
                   <td><img ng-src={{product.imageUrl}}></td>
                       <td>
                         <h1>{{product.name}}</h1>
-                            <div><strong>price:</strong><span> {{product.price | currency}}</span></div>
+                            <div><strong>price:</strong><span> {{product.price/100 | currency}}</span></div>
                             <div><strong>caffeine Scale:</strong><span> {{product.caffeineScale}}</span></div>
                             <div><strong>ingredients: </strong><span> {{product.ingredients}}</span></div>
                             <div><strong>rating: </strong><span> {{product.rating}}</span></div>
