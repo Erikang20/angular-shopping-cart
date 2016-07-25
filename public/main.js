@@ -10,18 +10,18 @@ var app = angular.module( "myApp", [ 'ngRoute' ] );
 
 app.controller( "headerController", function ( $scope, $http ) {
     $scope.view = {};
-    $scope.products = [
+    $scope.view.products = [
         {
             "_id": "55c8ee82152165d244b98300",
             name: "Bayard stew",
             ingredients: "concentrated gluten, jewelry, dill, beetle nut, toast",
             caffeineScale: 244,
-            "price": 1540,
-            "inStock": true,
-            "rating": 1,
-            "imageUrl": "http://s7d5.scene7.com/is/image/Teavana/32664_d?$cimg$",
-            "__v": 0,
-            "categories": [ "dark", "cold" ]
+            price: 1540,
+            inStock: true,
+            rating: 1,
+            imageUrl: "http://s7d5.scene7.com/is/image/Teavana/32664_d?$cimg$",
+            __v: 0,
+            categories: [ "dark", "cold" ]
     },
 
         {
