@@ -1,1 +1,1 @@
-Create an Angular app to add products to a shopping cart
+An Angular app to add products to a shopping cart
