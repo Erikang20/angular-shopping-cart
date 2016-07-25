@@ -23,7 +23,7 @@
 
   <body ng-controller="headerController">
 
-    <h1>Welcome to the MEAN tea!</h1>
+    <h1 class="mean-title">Welcome to the MEAN tea!</h1>
 
     <header>
       <nav class="navbar navbar-default">
@@ -48,6 +48,7 @@
           </nav>
         </header>
 
+    <div class="container search-form">
         <form name="productsForm">
           <label for="category">Search by Category: </label>
           <div class="btn-group">
@@ -61,17 +62,21 @@
             </ul>
           </div>
 
+
           <label for="name">Search by Name: </label>
           <input type="text">
 
-          <button type="button" class="btn btn-danger">Checkout | Bag: </button>
+          <button type="button" class="btn btn-danger pull-right">Checkout | Bag: </button>
         </form>
+      </div>
 
-  <table class="table table-striped">
+
+<div class="container">
+  <table class="table table-striped table-bordered">
       <thead>
-          <th>Tea</th>
-            <th>Information</th>
-              <th>Sort by
+          <th><h3>Tea</h3></th>
+            <th><h3>Information</h3></th>
+              <th><h3>Sort by
                 <div class="btn-group">
                   <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Price <span class="caret"></span>
@@ -81,7 +86,7 @@
                     <li><a href="#">High Price</a></li>
                   </ul>
                 </div>
-            </th>
+            </h3></th>
           </thead>
 <%# ============================================%>
 <%# display products on table%>
@@ -92,16 +97,16 @@
                   <td><img ng-src={{product.imageUrl}}></td>
                       <td>
                         <h1>{{product.name}}</h1>
-                            <div>price:<span> {{product.price | currency}}</span></div>
-                            <div>caffeine Scale:<span> {{product.caffeineScale}}</span></div>
-                            <div>ingredients: <span> {{product.ingredients}}</span></div>
-                            <div>rating: <span> {{product.rating}}</span></div>
-                            <div>In Stock: <span> {{product.inStock}}</span></div>
-                            <div>categories: <span> {{product.categories}}</span></div>
+                            <div><strong>price:</strong><span> {{product.price | currency}}</span></div>
+                            <div><strong>caffeine Scale:</strong><span> {{product.caffeineScale}}</span></div>
+                            <div><strong>ingredients: </strong><span> {{product.ingredients}}</span></div>
+                            <div><strong>rating: </strong><span> {{product.rating}}</span></div>
+                            <div><strong>In Stock: </strong><span> {{product.inStock}}</span></div>
+                            <div><strong>categories: </strong><span> {{product.categories}}</span></div>
                           </td>
 
                           <td>
-                              <div class="btn-group">
+                              <div class="btn-group form-group">
                                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                   Quantity <span class="caret"></span>
                                 </button>
@@ -123,6 +128,8 @@
                           </tr>
                         </tbody>
                       </table>
+
+                    </div>
 
         <div ng-view></div>
   </body>
