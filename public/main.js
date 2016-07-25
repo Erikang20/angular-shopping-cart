@@ -1,21 +1,21 @@
 var app = angular.module( "myApp", [ 'ngRoute' ] );
 
 
-app.config( function ( $routeProvider ) {
-    $routeProvider.when( '/', {
-        templateUrl: 'partials/home.html',
-        controller: 'headerController'
-    } )
-} )
+// app.config( function ( $routeProvider ) {
+//     $routeProvider.when( '/', {
+//         templateUrl: 'views/index.ejs',
+//         controller: 'headerController'
+//     } )
+// } )
 
-app.controller( "products", function ( $scope ) {
+app.controller( "headerController", function ( $scope, $http ) {
     $scope.view = {};
     $scope.products = [
         {
             "_id": "55c8ee82152165d244b98300",
-            "name": "Bayard stew",
-            "ingredients": "concentrated gluten, jewelry, dill, beetle nut, toast",
-            "caffeineScale": 244,
+            name: "Bayard stew",
+            ingredients: "concentrated gluten, jewelry, dill, beetle nut, toast",
+            caffeineScale: 244,
             "price": 1540,
             "inStock": true,
             "rating": 1,

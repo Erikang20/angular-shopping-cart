@@ -21,7 +21,7 @@
 
   </head>
 
-  <body>
+  <body ng-controller="headerController">
 
     <h1>Welcome to the MEAN tea!</h1>
 
@@ -71,28 +71,61 @@
           <thead>
             <th>Tea</th>
             <th>Information</th>
-            <th>Price</th>
+            <th>Sort by
+              <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Price <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Low Price</a></li>
+                  <li><a href="#">High Price</a></li>
+                </ul>
+              </div>
+            </th>
           </thead>
 
-            <tbody>
+            <tbody ng-repeat="product in products">
               <tr>
                 <td>img</td>
 
               <td>
                 <h1>{{products.name}}</h1>
-                    price: {{products.price}}
-                    caffeine Scale: {{products.caffeineScale}}
-                    ingredients: {{products.ingredients}}
-                    rating: {{products.rating}}
-                    In Stock: {{products.inStock}}
-                    categories: {{products.categories}}
+                    <div>price:</div><span>{{products.price}}</span>
+                    <div>caffeine Scale:</div><span>{{products.caffeineScale}}</span>
+                    <div>ingredients: </div><span>{{products.ingredients}}</span>
+                    <div>rating: </div><span>{{products.rating}}</span>
+                    <div>In Stock: </div><span>{{products.inStock}}</span>
+                    <div>categories: </div><span>{{products.categories}}</span>
                   </td>
-                    <h1>Quantity:</h1>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Quantity <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                        <li><a href="#">8</a></li>
+                        <li><a href="#">9</a></li>
+                        <li><a href="#">10</a></li>
+                      </ul>
+                    </div>
+                    <button>Add To Bag</button>
+                  </td>
+
               </tr>
             </tbody>
 
 
         </table>
+
+        <div ng-view></div>
+
 
 
   </body>
