@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/Erikang20/angular-shopping-cart#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
     "knex": "^0.11.9",
+    "method-override": "^2.3.6",
     "pg": "^6.0.3"
   }
 }
