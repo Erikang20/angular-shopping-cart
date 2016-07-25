@@ -17,11 +17,10 @@
     <script src="https://use.fontawesome.com/405a0adae2.js"></script>
 
     <script src="/main.js"></script>
-
     <link rel="stylesheet" href="/style.css">
 
-
   </head>
+
   <body>
 
     <h1>Welcome to the MEAN tea!</h1>
@@ -39,21 +38,61 @@
                 </div>
 
               <div class="collapse navbar-collapse" id="navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <ul class="nav navbar-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                  </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
+
+        <form name="productsForm">
+          <label for="category">Search by Category: </label>
+          <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Categories <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#">First Category</a></li>
+              <li><a href="#">Second Category</a></li>
+              <li><a href="#">Third Category</a></li>
+            </ul>
+          </div>
+
+          <label for="name">Search by Name: </label>
+          <input type="text">
+
+          <button>Checkout | Bag: </button>
+        </form>
+
+        <table class="table table-striped">
+          <thead>
+            <th>Tea</th>
+            <th>Information</th>
+            <th>Price</th>
+          </thead>
+
+            <tbody>
+              <tr>
+                <td>img</td>
+
+              <td>
+                <h1>{{products.name}}</h1>
+                    price: {{products.price}}
+                    caffeine Scale: {{products.caffeineScale}}
+                    ingredients: {{products.ingredients}}
+                    rating: {{products.rating}}
+                    In Stock: {{products.inStock}}
+                    categories: {{products.categories}}
+                  </td>
+                    <h1>Quantity:</h1>
+              </tr>
+            </tbody>
 
 
-
-
-                </ul>
-
-
-                        </div>
-                    </div>
-                </nav>
-            </header>
+        </table>
 
 
   </body>
