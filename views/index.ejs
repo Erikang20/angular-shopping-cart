@@ -89,10 +89,10 @@
 
               <tbody ng-repeat="product in view.products">
                 <tr>
-                  <td>img</td>
+                  <td><img ng-src={{product.imageUrl}}></td>
                       <td>
                         <h1>{{product.name}}</h1>
-                            <div>price:<span> {{product.price}}</span></div>
+                            <div>price:<span> {{product.price | currency}}</span></div>
                             <div>caffeine Scale:<span> {{product.caffeineScale}}</span></div>
                             <div>ingredients: <span> {{product.ingredients}}</span></div>
                             <div>rating: <span> {{product.rating}}</span></div>
