@@ -12,7 +12,7 @@ app.controller( "headerController", function ( $scope, $http ) {
     $scope.view = {};
     $scope.searchProduct = '';
     $scope.stock = " ";
-    $scope.quantity = '';
+    $scope.quantity = 0;
 
     $scope.price = function () {
         $scope.showMe = !$scope.showMe;
