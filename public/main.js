@@ -1,12 +1,16 @@
 var app = angular.module( "myApp", [ 'ngRoute' ] );
 
 
-// app.config( function ( $routeProvider ) {
-//     $routeProvider.when( '/', {
-//         templateUrl: 'views/index.ejs',
-//         controller: 'headerController'
-//     } )
-// } )
+app.config( function ( $routeProvider ) {
+    $routeProvider.when( '/', {
+            templateUrl: 'partials/home.html',
+            controller: 'headerController'
+        } )
+        .when( '/checkout', {
+            templateUrl: 'partials/checkout.html',
+            controller: 'checkController'
+        } );
+} )
 
 app.controller( "headerController", function ( $scope, $http ) {
     $scope.view = {};
@@ -158,6 +162,8 @@ app.controller( "headerController", function ( $scope, $http ) {
     }
    ]
 
+} );
 
-
+app.controller( "checkController", function ( $scope, $http ) {
+    console.log( "check please" );
 } );
