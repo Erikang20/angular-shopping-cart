@@ -11,6 +11,7 @@ var app = angular.module( "myApp", [ 'ngRoute' ] );
 app.controller( "headerController", function ( $scope, $http ) {
     $scope.view = {};
     $scope.searchProduct = '';
+    $scope.stock = "";
 
 
 
@@ -137,4 +138,11 @@ app.controller( "headerController", function ( $scope, $http ) {
             "categories": [ "spring", "warm", "winter" ]
     }
    ]
-} )
+
+    $scope.view.products.forEach( function ( value ) {
+        $scope.view.products.inStock = "yes";
+        var stock = $scope.view.products.inStock
+        console.log( stock );
+    } );
+
+} );

@@ -106,7 +106,10 @@
                             <div><strong>caffeine Scale:</strong><span> {{product.caffeineScale}}</span></div>
                             <div><strong>ingredients: </strong><span> {{product.ingredients}}</span></div>
                             <div><strong>rating: </strong><span> {{product.rating}}</span></div>
-                            <div><strong>In Stock: </strong><span> {{product.inStock}}</span></div>
+                            <div><strong>In Stock: </strong>
+                              <span ng-if="product.inStock !== false">Yes</span>
+                              <span ng-if="product.inStock !== true">No</span>
+                            </div>
                             <div><strong>categories: </strong><span> {{product.categories}}</span></div>
                           </td>
 
