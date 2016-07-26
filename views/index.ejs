@@ -56,14 +56,14 @@
           <label for="category">Search by Category: </label>
             <div class="btn-group">
 
-            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="btn btn-success dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Categories <span class="caret"></span>
             </button>
 
             <ul class="dropdown-menu">
-              <li><a href="#">Season</a></li>
-              <li><a href="#">temperature</a></li>
-              <li><a href="#">Likeability</a></li>
+              <li><a href="#" ng-model= "searchProduct">Season</a></li>
+              <li><a href="#" ng-model= "searchProduct">temperature</a></li>
+              <li><a href="#" ng-model= "searchProduct">Likeability</a></li>
             </ul>
           </div>
 
@@ -87,8 +87,8 @@
                     Price <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Low Price</a></li>
-                    <li><a href="#">High Price</a></li>
+                    <li><a href="#" ng-click="reverse=!reverse">Low Price</a></li>
+                    <li><a href="#" ng-click="reverse=!reverse">High Price</a></li>
                   </ul>
                 </div>
             </h3></th>
@@ -97,12 +97,12 @@
 <%# display products on table%>
 <%# ============================================%>
 
-              <tbody ng-repeat="product in view.products | filter:searchProduct">
+              <tbody ng-repeat="product in view.products | filter:searchProduct | orderBy:price:reverse">
                 <tr>
                   <td><img ng-src={{product.imageUrl}}></td>
                       <td>
                         <h1>{{product.name}}</h1>
-                            <div><strong>price:</strong><span> {{product.price/100 | currency}}</span></div>
+                            <div><strong>price:</strong><span class="sortBy"> {{product.price/100 | currency}}</span></div>
                             <div><strong>caffeine Scale:</strong><span> {{product.caffeineScale}}</span></div>
                             <div><strong>ingredients: </strong><span> {{product.ingredients}}</span></div>
                             <div><strong>rating: </strong><span> {{product.rating}}</span></div>
@@ -110,7 +110,7 @@
                               <span ng-if="product.inStock !== false">Yes</span>
                               <span ng-if="product.inStock !== true">No</span>
                             </div>
-                            <div><strong>categories: </strong><span> {{product.categories}}</span></div>
+                            <div><strong>categories: </strong><span> {{product.categories | filter:searchProduct}}</span></div>
                           </td>
 
                           <td>

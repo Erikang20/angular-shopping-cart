@@ -11,9 +11,18 @@ var app = angular.module( "myApp", [ 'ngRoute' ] );
 app.controller( "headerController", function ( $scope, $http ) {
     $scope.view = {};
     $scope.searchProduct = '';
-    $scope.stock = "";
+    $scope.stock = " ";
+    $scope.quantity = '';
 
+    $scope.price = function () {
+        $scope.showMe = !$scope.showMe;
+        console.log( "showing the price" );
+    }
 
+    $scope.sortBy = function () {
+        $scope.reverse = ( $scope.propertyName === $scope.clone.propertyName ) ? !$scope.reverse : false;
+        $scope.propertyName = $scope.clone.propertyName;
+    }
 
     $scope.view.products = [
         {
@@ -139,10 +148,6 @@ app.controller( "headerController", function ( $scope, $http ) {
     }
    ]
 
-    $scope.view.products.forEach( function ( value ) {
-        $scope.view.products.inStock = "yes";
-        var stock = $scope.view.products.inStock
-        console.log( stock );
-    } );
+
 
 } );
