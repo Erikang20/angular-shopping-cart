@@ -12,7 +12,17 @@ app.controller( "headerController", function ( $scope, $http ) {
     $scope.view = {};
     $scope.searchProduct = '';
     $scope.stock = " ";
-    $scope.quantity = 0;
+    $scope.newBag = [];
+
+    $scope.bag = function ( someItem, qty ) {
+        var newItem = {};
+        newItem.name = someItem.name;
+        newItem.price = someItem.price;
+        newItem.quantity = 2;
+
+        $scope.newBag.push( newItem );
+        console.log( $scope.newBag );
+    }
 
     $scope.price = function () {
         $scope.showMe = !$scope.showMe;
