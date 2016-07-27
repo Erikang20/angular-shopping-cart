@@ -17,25 +17,28 @@ app.controller( "headerController", function ( $scope, $http ) {
     $scope.searchProduct = '';
     $scope.stock = " ";
     $scope.newBag = [];
+    $scope.reverse = true;
+
 
     $scope.bag = function ( someItem, qty ) {
         var newItem = {};
         newItem.name = someItem.name;
         newItem.price = someItem.price;
-        newItem.quantity = 2;
+        newItem.quantity = 0;
 
         $scope.newBag.push( newItem );
-        console.log( $scope.newBag );
+        console.log( newItem );
     }
 
-    $scope.price = function () {
-        $scope.showMe = !$scope.showMe;
-        console.log( "showing the price" );
-    }
+    //  $scope.showPrice = function () {
+    //      $scope.showMe = !$scope.showMe;
+    //      console.log( "showing the price" );
+    //  }
 
     $scope.sortBy = function () {
-        $scope.reverse = ( $scope.propertyName === $scope.clone.propertyName ) ? !$scope.reverse : false;
-        $scope.propertyName = $scope.clone.propertyName;
+        $scope.reverse = ( $scope.propertyName === $scope.propertyName ) ? !$scope.reverse : false;
+        $scope.propertyName = $scope.propertyName;
+        console.log( "sorting" );
     }
 
     $scope.view.products = [
