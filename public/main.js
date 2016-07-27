@@ -18,7 +18,19 @@ app.controller( "headerController", function ( $scope, $http ) {
     $scope.stock = " ";
     $scope.newBag = [];
     $scope.reverse = true;
+    //  $scope.searchCateg = '';
 
+    $scope.group = [
+                        "cold",
+                        "awesome",
+                        "dry",
+                        "hot",
+                        "summer",
+                        "warm",
+                        "lucid",
+                        "winter",
+                        "spring"
+                     ]
 
     $scope.bag = function ( someItem, qty ) {
         var newItem = {};
@@ -28,6 +40,11 @@ app.controller( "headerController", function ( $scope, $http ) {
 
         $scope.newBag.push( newItem );
         console.log( newItem );
+    }
+
+    $scope.getProducts = function ( items ) {
+        bag();
+        console.log( bag );
     }
 
     //  $scope.showPrice = function () {

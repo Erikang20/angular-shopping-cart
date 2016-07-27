@@ -1,25 +1,19 @@
 <div class="container search-form">
+  HELLO:{{ searchProduct }}
     <form name="productsForm" role="search">
       <label for="category">Search by Category: </label>
         <div class="btn-group">
 
-        <button type="button" class="btn btn-success dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <!-- <button type="button" class="btn btn-success dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Categories <span class="caret"></span>
-        </button>
+        </button> -->
 
-        <ul class="dropdown-menu">
-          <li><a href="#" ng-model= "searchProduct">Dark</a></li>
-          <li><a href="#" ng-model= "searchProduct">Cold</a></li>
-          <li><a href="#" ng-model= "searchProduct">awesome</a></li>
-          <li><a href="#" ng-model= "searchProduct">dry</a></li>
-          <li><a href="#" ng-model= "searchProduct">hot</a></li>
-          <li><a href="#" ng-model= "searchProduct">summer</a></li>
-          <li><a href="#" ng-model= "searchProduct">warm</a></li>
-          <li><a href="#" ng-model= "searchProduct">lucid</a></li>
-          <li><a href="#" ng-model= "searchProduct">winter</a></li>
-          <li><a href="#" ng-model= "searchProduct">spring</a></li>
+        <select class="btn" ng-model='selectedGroup'>
+          <option ng-repeat='group in groups'>
+            {{group}}
+          </option>
+        </select>
 
-        </ul>
       </div>
 
 
@@ -67,7 +61,7 @@
                           <span ng-if="product.inStock !== false">Yes</span>
                           <span ng-if="product.inStock !== true">No</span>
                         </div>
-                        <div><strong>categories: </strong><span> {{product.categories | filter:searchProduct}}</span></div>
+                        <div><strong>categories: </strong><span class="sortBy"> {{product.categories | filter:searchProduct}}</span></div>
                       </td>
 
                       <td>
