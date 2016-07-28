@@ -20,7 +20,7 @@ app.controller( "headerController", function ( $scope, $http ) {
     $scope.reverse = true;
     //  $scope.searchCateg = '';
 
-    $scope.view.categories = [ "cold",
+    $scope.categories = [ "cold",
                   "awesome",
                   "dry",
                   "hot",
@@ -31,7 +31,7 @@ app.controller( "headerController", function ( $scope, $http ) {
                   "spring"
                      ]
 
-    $scope.view.categories.forEach( function ( onlyCategory, category ) {
+    $scope.categories.forEach( function ( onlyCategory, category ) {
         onlyCategory = true;
         console.log( onlyCategory );
     } );

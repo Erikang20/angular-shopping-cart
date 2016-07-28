@@ -1,13 +1,13 @@
 <div class="container">
-  HELLO:{{ options }}
+  HELLO:{{ category }}
     <form name="productsForm">
           <label for="repeatCategory">Search by Category: </label>
-          <select name="repeatCategory" id="repeatCategory" ng-model='categories'>
-            <option ng-repeat='onlyCategory in categories' value="{{categories}}">
-              {{onlyCategory}}
+          <select name="repeatCategory" id="repeatCategory" ng-model='search.categories'>
+            <option ng-repeat='category in categories' value="{{categories}}">
+              {{category}}
           </option>
         </select>
-      <tt>{{onlyCategory}}</tt>
+      <tt>{{category}}</tt>
     </form>
 
 
@@ -54,26 +54,17 @@
                           <span ng-if="product.inStock !== false">Yes</span>
                           <span ng-if="product.inStock !== true">No</span>
                         </div>
-                        <div><strong>categories: </strong><span class="sortBy"> {{product.categories | filter:searchProduct}}</span></div>
+                        <div><strong>categories: </strong><span>{{product.categories}} </span></div>
                       </td>
 
                       <td>
                           <div class="btn-group form-group">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Quantity <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                              <li><a href="#">1</a></li>
-                              <li><a href="#">2</a></li>
-                              <li><a href="#">3</a></li>
-                              <li><a href="#">4</a></li>
-                              <li><a href="#">5</a></li>
-                              <li><a href="#">6</a></li>
-                              <li><a href="#">7</a></li>
-                              <li><a href="#">8</a></li>
-                              <li><a href="#">9</a></li>
-                              <li><a href="#">10</a></li>
-                            </ul>
+                            <select>
+                                <option ng-repeat="itemQty in [1,2,3,4,5,6,7,8,9,10]" value="{{itemQty}}">
+                                    {{itemQty}}
+                              </option>
+                            </select>
+
                           </div>
                           <button type="button" class="btn btn-warning" ng-click="bag(product,qty)">Add To Bag</button>
                         </td>
