@@ -1,34 +1,27 @@
-<div class="container search-form">
-  HELLO:{{ searchProduct }}
-    <form name="productsForm" role="search">
-      <label for="category">Search by Category: </label>
-        <div class="btn-group">
-
-        <!-- <button type="button" class="btn btn-success dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Categories <span class="caret"></span>
-        </button> -->
-
-        <select class="btn" ng-model='selectedGroup'>
-          <option ng-repeat='group in groups'>
-            {{group}}
+<div class="container">
+  HELLO:{{ options }}
+    <form name="productsForm">
+          <label for="repeatCategory">Search by Category: </label>
+          <select name="repeatCategory" id="repeatCategory" ng-model='categories'>
+            <option ng-repeat='onlyCategory in categories' value="{{categories}}">
+              {{onlyCategory}}
           </option>
         </select>
-
-      </div>
+      <tt>{{onlyCategory}}</tt>
+    </form>
 
 
       <label for="name">Search by Name: </label>
       <input type="text" ng-model="searchProduct">
 
       <a href="/#/checkout" type="button" class="btn btn-danger pull-right" ng-click="quantity= quantity">Checkout | Bag: {{quantity}} </a>
-    </form>
   </div>
 
 
 
 <div class="container">
-<table class="table table-striped table-bordered">
-  <thead>
+  <table class="table table-striped table-bordered">
+    <thead>
       <th><h3>Tea</h3></th>
         <th><h3>Information</h3></th>
           <th><h3>Sort by

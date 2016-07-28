@@ -20,17 +20,22 @@ app.controller( "headerController", function ( $scope, $http ) {
     $scope.reverse = true;
     //  $scope.searchCateg = '';
 
-    $scope.group = [
-                        "cold",
-                        "awesome",
-                        "dry",
-                        "hot",
-                        "summer",
-                        "warm",
-                        "lucid",
-                        "winter",
-                        "spring"
+    $scope.view.categories = [ "cold",
+                  "awesome",
+                  "dry",
+                  "hot",
+                  "summer",
+                  "warm",
+                  "lucid",
+                  "winter",
+                  "spring"
                      ]
+
+    $scope.view.categories.forEach( function ( onlyCategory, category ) {
+        onlyCategory = true;
+        console.log( onlyCategory );
+    } );
+
 
     $scope.bag = function ( someItem, qty ) {
         var newItem = {};
